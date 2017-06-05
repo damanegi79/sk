@@ -34,12 +34,13 @@ a:hover{color:#707070;}
 
 .clearfix:after{content: ""; display: block; clear: both;}
 
-body{font-family: 'notokr-regular'; font-size: 12px; color: #666;}
+body{font-family: 'notokr-regular'; font-size: 12px; color: #222;}
 button{background: none; padding: 0; line-height: 100%;  cursor: pointer; border: none;}
 
 /* layout */
-#wrapper{}
-#header{background-color: #4f4897;}
+#wrapper{padding-top: 84px;}
+#header{background-color: #4f4897;position: fixed; left: 0; top: 0; width: 100%; z-index: 20;}
+#header.fixed{}
 .headerContents:after{content: ""; display: block; clear: both;}
 #header .headerContents{width: 1080px; margin: auto; position: relative; height: 84px;}
 #header .logo {position: relative; float: left; margin-top: 18px;}
@@ -72,7 +73,7 @@ button{background: none; padding: 0; line-height: 100%;  cursor: pointer; border
 #leftArea .searchApi{border: 1px solid #d9d9d9;}
 #leftArea .searchApi input{float: left; width: 150px; height: 30px; padding-left: 10px; border: none;}
 #leftArea .searchApi button{float: right; width: 30px; height: 30px;color: #adaeb5; font-size: 16px;}
-#leftArea .leftNav{margin-top: 30px;}
+#leftArea .leftNav{margin-top: 30px; overflow-y: auto;}
 #leftArea .leftNav dl{margin-bottom: 15px;}
 #leftArea .leftNav dl dt a{font-size: 18px; color: #222; display: block;}
 #leftArea .leftNav dl dt.active a{color: #538ac7;}
@@ -82,9 +83,17 @@ button{background: none; padding: 0; line-height: 100%;  cursor: pointer; border
 #leftArea .leftNav dl dd ul li {margin-top: 10px;}
 #leftArea .leftNav dl dd ul li a{font-size: 15px; display: inline-block;}
 #leftArea .leftNav dl dd ul li.active a{color: #538ac7; border-bottom: 2px solid #538ac7;}
+#leftArea .leftNav dl dd ul li a:hover{color: #538ac7;}
 
 #contents{float: left; width: 840px;}
 #contents .btnConsole {position: absolute; right: 0; top: 0;}
 #contents .btnConsole a{width: 120px; height: 34px; line-height: 34px; color: #fff; font-size: 18px; background-color: #568db8; display: block; box-sizing: border-box; padding-left: 15px; position: relative;}
 #contents .btnConsole a i{font-size: 12px; position: absolute; right: 10px; top: 12px;}
 #contents h2.apiTitle{color: #222; font-size: 18px; font-weight: normal; line-height: 45px; border-bottom: 1px solid #d9d9d9;}
+#contents .apiContents .apiBox{ border-bottom: 1px solid #d9d9d9; padding:15px 20px 15px 20px; }
+#contents .apiContents .apiBox:last-child{border: none;}
+#contents .apiContents h3{font-size: 18px; margin-left: -10px;}
+#contents .apiContents dl{margin-top: 15px;}
+#contents .apiContents dl dt{font-size: 15px; font-weight: 600; padding-left: 10px; position: relative; margin-bottom: 5px;}
+#contents .apiContents dl dt:before{ position: absolute; left: 0; top: 8px; content: ""; display:inline-block; background-color: #6c6c6c; width: 3px; height: 3px;}
+#contents .apiContents dl dd{padding-left:10px; color: #666666; font-size:15px; line-height: 20px; font-weight:200;}
