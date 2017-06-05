@@ -40,9 +40,9 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {color: #ab
 /* Basic Hyperlink css begin */
 
 /*a, img, input {selector-dummy : expression(this.hideFocus=true); outline:none; background: transparent;}*/
-/*a{color:#707070;text-decoration:none;}*/
+a{color:#707070;text-decoration:none;}
 a:link, a:visited, a:active{text-decoration: none;}
-/*a:hover{color:#707070;}*/
+a:hover{color:#707070;}
 
 /* common */
 
@@ -76,7 +76,7 @@ a:link, a:visited, a:active{text-decoration: none;}
 .L2{padding-left:2px;}
 .L3{padding-left:3px;}
 .L4{padding-left:4px;}
-.L5{padding-left:5px !important;}
+.L5{padding-left:5px;}
 .L7{padding-left:7px;}
 .L8{padding-left:8px;}
 .L10{padding-left:10px;}
