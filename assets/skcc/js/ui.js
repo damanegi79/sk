@@ -1,6 +1,7 @@
 // JavaScript Document
 $(document).ready(function(){
     init();
+    leftNav()
 })
 
 function init() {
@@ -95,24 +96,6 @@ function init() {
             $('.btnTop').removeClass('active')
         }
     })
-
-    var slideNum = $('.statsMenu .swiper-slide.active').index()
-    var swiper = new Swiper('.statsMenu', {
-        slidesPerView:5,
-        loop: false,
-        autoplay:false,
-        initialSlide:slideNum,
-        freeMode :true
-    });
-    swiper.on('slideChangeStart', function () {
-//        swiper.activeIndex()
-        console.log(slideNum);
-//        swiper.slideTo(3, 100);
-
-    });
-
-
-
 }
 
 function layer_function(){
@@ -128,4 +111,13 @@ function layer_init(name){
 //    $('.popup-layer').show().css({marginTop:-pop_height}).addClass('bounceInUp')
     $('.popup-layer.'+name).show().css({marginTop:-pop_height}).addClass('bounceInUp')
     return false;
+}
+
+function leftNav(){
+    $('.leftNav ul li.active').parent().parent().show().prev().addClass('active');
+    $('.leftNav dt a').on('click',function(){
+        $(this).parent().toggleClass('active').parent().siblings('dl').find('dt').removeClass('active')
+        $(this).parent().next().slideToggle(200)
+        $(this).parent().parent().siblings('dl').find('dd').slideUp(200)
+    })
 }

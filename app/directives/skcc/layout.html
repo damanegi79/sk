@@ -22,7 +22,7 @@
 
 <body>
 <div id="wrapper">
-    <div id="header">
+    <div id="header"><!-- header -->
         <div class="headerContents">
             <h1 class="hide">SK C&amp;C</h1>
             <div class="logo">
@@ -35,16 +35,165 @@
             <div class="headerRight">
                 <div class="nav">
                     <ul class="cleadfix">
-                        <li class="active"><a href="#">About</a></li>
-                        <li><a href="#">API</a></li>
+                        <li><a href="#">About</a></li>
+                        <li class="active"><a href="#">API</a></li>
                         <li><a href="#">Show Case</a></li>
                         <li><a href="#">Service</a></li>
                         <li><a href="#">Support</a></li>
                     </ul>
                 </div>
+                <div class="user">
+                    <p class="userName"><a href="#">홍길동님 <i class="fa fa-caret-down" aria-hidden="true"></i></a></p>
+                </div>
             </div>
         </div>
+    </div><!-- //header -->
+    <div id="container">
+        <div id="leftArea">
+            <div class="searchApi clearfix">
+                <input type="text">
+                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <div class="leftNav">
+                <dl>
+                    <dt><a href="#">Auth</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="#">menu01</a></li>
+                            <li><a href="#">menu02</a></li>
+                            <li><a href="#">menu03</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">Global Workflow</a></dt>
+                    <dd>
+                        <ul>
+                            <li class="active"><a href="#">워크플로우생성</a></li>
+                            <li><a href="#">워크플로우 가져오기</a></li>
+                            <li><a href="#">워크플로우 삭제</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">Workflow</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="#">menu01</a></li>
+                            <li><a href="#">menu02</a></li>
+                            <li><a href="#">menu03</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">Schedule</a></dt>
+                </dl>
+                <dl>
+                    <dt><a href="#">Streaming</a></dt>
+                </dl>
+                <dl>
+                    <dt><a href="#">Agent</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="#">menu01</a></li>
+                            <li><a href="#">menu02</a></li>
+                            <li><a href="#">menu03</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">Common</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="#">menu01</a></li>
+                            <li><a href="#">menu02</a></li>
+                            <li><a href="#">menu03</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">Queue</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="#">menu01</a></li>
+                            <li><a href="#">menu02</a></li>
+                            <li><a href="#">menu03</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="#">Collector</a></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="#">menu01</a></li>
+                            <li><a href="#">menu02</a></li>
+                            <li><a href="#">menu03</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div id="contentsArea">
+            <div id="contents">
+                <p class="btnConsole"><a href="#">Console <i class="fa fa-chevron-down" aria-hidden="true"></i></a></p>
+                <div class="apiContents">       
+                    <h2 class="apiTitle">/workflow/node</h2>             
+                    <h3>Request</h3>
+                    <dl>
+                        <dt>Description</dt>
+                        <dd>Component Node 목록 요청 Component Node 목록 요청 Component Node 목록 요청 Comp</dd>
+                        <dd>onent Node 목록 요청 Component Node 목록 요청 Component Node 목록 요청</dd>
+                    </dl>
+                    <dl>
+                        <dt>URL PARAMETERS</dt>
+                        <dd>Version required, (v1) string</dd>
+                    </dl>
+                    <dl>
+                        <dt>QUERY PARAMETERS</dt>
+                        <dd>filter string : 검색에 포함할 키워드, Example) wfs</dd>
+                        <dd>start integer : 시작 페이지 번호 (기본값=0), Example) 0</dd>
+                        <dd>len integer : 한페이지에 보여줄 목록 개수 (기본값=Integer:MAX), Example) 15</dd>
+                        <dd>requestUser required string : API 요청 사용자 ID (ex, gildong), Example) gildong</dd>
+                    </dl>
+                    <dl>
+                        <dt>SECURITY SCHEMES</dt>
+                        <dd>Anoymous</dd>
+                    </dl>
+                    <dl>
+                        <dt>Body</dt>
+                        <dd>application/json</dd>
+                        <dd>GlobalWorkflow object</dd>
+                        <dd>description required string</dd>
+                        <dd>id required string</dd>
+                        <dd>name required string</dd>
+                        <dd>owner required string</dd>
+                    </dl>
+                    <dl>
+                        <dt>Examples</dt>
+                        <dd>Example</dd>
+                    </dl>
+                    <dl>
+                        <dt>Application/json</dt>
+                        <dd>object</dd>
+                    </dl>
+                </div>
+                <div class="consoleCon">
+                    asdasd
+                </div>
+            </div>
+            
+        </div>
     </div>
+    <div id="footer"><!-- footer -->
+        <div class="footerCon">
+            <ul class="footMenu">
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+            </ul>
+            <p class="location">(03188) 서울특별시 종로구 종로 26</p>
+            <p class="coptright">COPYRIGHTⓒ2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+        </div>
+    </div><!-- //footer -->
 </div>
 </body>
 </html>

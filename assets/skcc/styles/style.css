@@ -32,6 +32,8 @@ a{color:#707070;text-decoration:none;}
 a:link, a:visited, a:active{text-decoration: none;}
 a:hover{color:#707070;}
 
+.clearfix:after{content: ""; display: block; clear: both;}
+
 body{font-family: 'notokr-regular'; font-size: 12px; color: #666;}
 button{background: none; padding: 0; line-height: 100%;  cursor: pointer; border: none;}
 
@@ -45,3 +47,44 @@ button{background: none; padding: 0; line-height: 100%;  cursor: pointer; border
 #header .logo .wing_l{width: 20px; position: absolute; top:0; left: 21px;}
 #header .logo .wing_r{ width: 24px; position: absolute; top: 13px; left: 37px;}
 #header .logo .svg path{fill:#fff}
+#header .headerRight{float: right; margin-top: 35px;}
+#header .headerRight .nav{float: left;}
+#header .headerRight .nav li{float: left;}
+#header .headerRight .nav li a{color: #fff; font-size: 18px; margin-right: 30px; display: inline-block;}
+#header .headerRight .nav li.active a{border-bottom:2px solid #fff;}
+#header .headerRight .nav li a:hover{ border-bottom:2px solid #fff;}
+#header .headerRight .user{float: left;}
+#header .headerRight .user a{color: #fff; font-size: 13px; display: inline-block; border: 1px solid #847fb6; height: 28px; line-height: 28px; padding:0 35px 0 15px; ; position: relative;}
+#header .headerRight .user a i{position: absolute; right: 10px; top:10px; font-size: 11px;}
+#footer{border-top: 1px solid #d2d2d2; font-size: 13px; margin-top:120px;}
+#footer .footerCon{width: 1080px; margin: auto; position: relative; height: 60px; padding-top: 20px;}
+#footer .footMenu{ position: absolute; right: 0; top: 20px;}
+#footer .footMenu li{float: left;}
+#footer .footMenu li:after{content: "|"; float: left; display: inline-block; width:25px; text-align: center; font-size: 10px; color: #e1e1e1;}
+#footer .footMenu li:first-child:after{display: none;}
+#container{width: 1080px; margin: auto; position: relative;margin-top: 20px;}
+#container:after{content: ""; display: block; clear: both;}
+
+#contentsArea{width: 840px; float: right; min-height: 600px;}
+#contentsArea:after{content: ""; display: block; clear: both;}
+
+#leftArea{width: 200px;position: fixed; left: 50%; top:105px; margin-left: -540px;}
+#leftArea .searchApi{border: 1px solid #d9d9d9;}
+#leftArea .searchApi input{float: left; width: 150px; height: 30px; padding-left: 10px; border: none;}
+#leftArea .searchApi button{float: right; width: 30px; height: 30px;color: #adaeb5; font-size: 16px;}
+#leftArea .leftNav{margin-top: 30px;}
+#leftArea .leftNav dl{margin-bottom: 15px;}
+#leftArea .leftNav dl dt a{font-size: 18px; color: #222; display: block;}
+#leftArea .leftNav dl dt.active a{color: #538ac7;}
+#leftArea .leftNav dl dt a:hover{color: #538ac7;}
+#leftArea .leftNav dl dd{display: none; padding-bottom: 10px;}
+#leftArea .leftNav dl dd ul{ padding-left: 15px;}
+#leftArea .leftNav dl dd ul li {margin-top: 10px;}
+#leftArea .leftNav dl dd ul li a{font-size: 15px; display: inline-block;}
+#leftArea .leftNav dl dd ul li.active a{color: #538ac7; border-bottom: 2px solid #538ac7;}
+
+#contents{float: left; width: 840px;}
+#contents .btnConsole {position: absolute; right: 0; top: 0;}
+#contents .btnConsole a{width: 120px; height: 34px; line-height: 34px; color: #fff; font-size: 18px; background-color: #568db8; display: block; box-sizing: border-box; padding-left: 15px; position: relative;}
+#contents .btnConsole a i{font-size: 12px; position: absolute; right: 10px; top: 12px;}
+#contents h2.apiTitle{color: #222; font-size: 18px; font-weight: normal; line-height: 45px; border-bottom: 1px solid #d9d9d9;}
