@@ -31,23 +31,34 @@
 a{color:#707070;text-decoration:none;}
 a:link, a:visited, a:active{text-decoration: none;}
 a:hover{color:#707070;}
-
+select{border: 1px solid #d9d9d9; width: 100%; height:34px; padding-left: 15px; color: #666666; -webkit-appearance: none; -moz-appearance: none; appearance: none; position: relative; z-index: 10; background: none; font-size: 15px;}
+.select{position: relative; background-color: #fff;}
+.select:after{content: "\f0d7"; display: block; font-family:'FontAwesome'; color: #999; position: absolute; right:15px; top: 10px;}
 .clearfix:after{content: ""; display: block; clear: both;}
-
-body{font-family: 'notokr-regular'; font-size: 12px; color: #222;}
 button{background: none; padding: 0; line-height: 100%;  cursor: pointer; border: none;}
 
+/* color */
+.f_blue{color: #3477ac;}
+
+/* btn */
+.btn{display: inline-block; text-align: center;  font-size: 15px; box-sizing: border-box;}
+.btn-m{height: 34px; line-height: 36px; padding: 0 20px;}
+.btn-gray{background-color: #f7f7f7; border: 1px solid #d9d9d9; color: #666; border: 1px solid #d9d9d9;}
+.btn-blue{background-color: #3477ac; color: #fff; }
+.btn-dark{background-color: #6a6a6e; color: #fff; }
+
 /* layout */
+body{font-family: 'notokr-regular'; font-size: 12px; color: #222;}
 #wrapper{padding-top: 84px;}
-#header{background-color: #4f4897;position: fixed; left: 0; top: 0; width: 100%; z-index: 20;}
+#header{background-color: #4f4897;position: fixed; left: 0; top: 0; width: 100%; z-index:50;}
 #header.fixed{}
 .headerContents:after{content: ""; display: block; clear: both;}
 #header .headerContents{width: 1080px; margin: auto; position: relative; height: 84px;}
 #header .logo {position: relative; float: left; margin-top: 18px;}
 #header .logo a{display: block; width: 66px; height: 50px; padding-top: 27px; box-sizing: border-box; }
-#header .logo .wing_l{width: 20px; position: absolute; top:0; left: 21px;}
-#header .logo .wing_r{ width: 24px; position: absolute; top: 13px; left: 37px;}
-#header .logo .svg path{fill:#fff}
+#header .logo .wing_l{width: 20px; position: absolute; top:0; left: 21px; transform: perspective(1000px); transform-origin: right center;}
+#header .logo .wing_r{ width: 24px; position: absolute; top: 13px; left: 37px; transform: perspective(1000px); transform-origin:5px top;}
+#header .logo .svg path{fill:#fff;}
 #header .headerRight{float: right; margin-top: 35px;}
 #header .headerRight .nav{float: left;}
 #header .headerRight .nav li{float: left;}
@@ -66,7 +77,7 @@ button{background: none; padding: 0; line-height: 100%;  cursor: pointer; border
 #container{width: 1080px; margin: auto; position: relative;margin-top: 20px;}
 #container:after{content: ""; display: block; clear: both;}
 
-#contentsArea{width: 840px; float: right; min-height: 600px;}
+#contentsArea{width: 840px; float: right; min-height: 600px; overflow: hidden;}
 #contentsArea:after{content: ""; display: block; clear: both;}
 
 #leftArea{width: 200px;position: fixed; left: 50%; top:105px; margin-left: -540px;}
@@ -85,15 +96,73 @@ button{background: none; padding: 0; line-height: 100%;  cursor: pointer; border
 #leftArea .leftNav dl dd ul li.active a{color: #538ac7; border-bottom: 2px solid #538ac7;}
 #leftArea .leftNav dl dd ul li a:hover{color: #538ac7;}
 
-#contents{float: left; width: 840px;}
-#contents .btnConsole {position: absolute; right: 0; top: 0;}
+#contents{}
+#contents:after{content: ""; display: block; clear: both;}
+#contents .btnConsole {position: absolute; right: 0; top: 0; z-index: 20;}
 #contents .btnConsole a{width: 120px; height: 34px; line-height: 34px; color: #fff; font-size: 18px; background-color: #568db8; display: block; box-sizing: border-box; padding-left: 15px; position: relative;}
-#contents .btnConsole a i{font-size: 12px; position: absolute; right: 10px; top: 12px;}
+#contents .btnConsole a i{font-size: 12px; position: absolute; right: 10px; top: 12px; transition: all 0.5s ease;}
+#contents .btnConsole a.active i{transform: perspective(1000px) rotateZ(180deg)}
 #contents h2.apiTitle{color: #222; font-size: 18px; font-weight: normal; line-height: 45px; border-bottom: 1px solid #d9d9d9;}
+#contents .apiContents{float: left;   width: 500px; transition: all 0.5s ease;}
+#contents .apiContents.active{width: 840px;}
 #contents .apiContents .apiBox{ border-bottom: 1px solid #d9d9d9; padding:15px 20px 15px 20px; }
 #contents .apiContents .apiBox:last-child{border: none;}
+#contents .apiContents.active .apiBox{padding-right: 0;}
 #contents .apiContents h3{font-size: 18px; margin-left: -10px;}
+#contents .apiContents h4{font-size: 15px; margin-top: 15px;}
 #contents .apiContents dl{margin-top: 15px;}
+#contents .apiContents dl:after{content: ""; display: block; clear: both;}
 #contents .apiContents dl dt{font-size: 15px; font-weight: 600; padding-left: 10px; position: relative; margin-bottom: 5px;}
-#contents .apiContents dl dt:before{ position: absolute; left: 0; top: 8px; content: ""; display:inline-block; background-color: #6c6c6c; width: 3px; height: 3px;}
-#contents .apiContents dl dd{padding-left:10px; color: #666666; font-size:15px; line-height: 20px; font-weight:200;}
+#contents .apiContents dl dt:before{ position: absolute; left: 0; top:10px; content: ""; display:inline-block; background-color: #6c6c6c; width: 3px; height: 3px;}
+#contents .apiContents dl dd{padding-left:10px; color: #666666; font-size:15px; line-height: 24px; font-weight:200;}
+#contents .apiContents dl dd b{font-weight:600;}
+#contents .apiContents dl.inline dt{float: left;}
+#contents .apiContents dl.inline dd{float: left;}
+
+.codePreview code{font-size: 15px; border: 1px solid #d9d9d9;}
+.tabResponse {margin-top:5px;}
+.tabResponse ul{}
+.tabResponse ul li{float: left; margin-left: -1px; margin-top: -1px;}
+.tabResponse ul li a{display: block; width: 80px; height: 24px; line-height: 26px; text-align: center; font-size: 15px; border: 1px solid #d9d9d9; transition: all 0.5s ease}
+.tabResponse ul li.green a{color: #008000;}
+.tabResponse ul li.green a:hover{color: #fff; background-color:#008000;}
+.tabResponse ul li.green.active a{color: #fff; background-color:#008000;}
+.tabResponse ul li.red a{color: #e62c2c;}
+.tabResponse ul li.red a:hover{color: #fff; background-color:#e62c2c;}
+.tabResponse ul li.red.active a{color: #fff; background-color:#e62c2c;}
+
+.consoleCon{float: right;  width: 320px; background-color: #efefef; padding: 65px 20px 30px 20px; box-sizing: border-box; position: relative;  transition: all 0.5s ease; transform: perspective(1000px) translateX(320px); margin-right: -400px;}
+.consoleCon.active{transform: perspective(1000px) translateX(0px); margin-right: 0;}
+.consoleCon h3{font-size: 15px;}
+.consoleCon p{color: #666666;font-size: 12px; line-height: 16px;}
+.consoleCon .small{}
+.consoleBlock{margin-bottom: 30px;}
+.consoleBlock h3{ margin-bottom: 10px;}
+.consoleCon .select{margin-top:5px;}
+.consoleBlock .select select{}
+.slideBlock{ border-top: 1px solid #494a4e; border-bottom: 1px solid #494a4e; margin-bottom: 30px; position: relative; padding-bottom: 10px;transition: all 0.3s ease;}
+.slideBlock h3{height: 40px; line-height: 40px; border-bottom: 1px solid #d9d9d9;}
+.slideBlock .btn{position: absolute; right:5px; top: 10px;}
+.slideBlock .btn a{display: block; width: 20px; height: 20px; text-align: center; line-height:20px; float: left;  margin-left: 5px; color: #494a4e; font-weight: 100; transition: all 0.3s ease; transform:perspective(1000px);}
+.slideBlock .btn a.slide.active{transform:perspective(1000px) rotateZ(180deg);}
+.slideBlock dl{margin-top: 15px;}
+.slideBlock dl dt{font-size: 15px; color: #222; font-weight: bold; margin-bottom: 3px;}
+.slideBlock dl dd{font-size: 15px; color: #666666;}
+.slideBlock dl:after{content: ""; display: block; clear: both;}
+.slideBlock dl.inline dt{float: left;}
+.slideBlock dl.inline dd{float: left; margin-left: 10px;}
+.slideBlock .requestBox{padding-top: 10px;}
+.slideBlock.active{border-top: 1px solid #d9d9d9; border-bottom: 1px solid #d9d9d9;  padding-bottom: 0px;}
+.slideBlock.active h3{border: none;}
+.slideBlock.active .requestBox{padding-top:0px; padding-bottom: 10px;}
+.slideBlock.active dl{display: none;}
+
+.blockList{padding-top:11px;transition: all 0.3s ease;}
+.blockList li{position: relative; background-color: #fff; border: 1px solid #d9d9d9; margin-top: -1px; padding-left: 15px; padding-right: 40px; height:32px; line-height: 34px;}
+.blockList li .delect{position: absolute; right:8px; top:8px; border: 1px solid #d9d9d9; color: #999999; border: 1px solid #d9d9d9; width: 17px; height: 17px; text-align: center; font-size: 10px; display: block; display:none;}
+.blockList li .delect i{position: relative; left: 1px;}
+.blockList li:hover .delect{display: block;}
+.consoleBtn a{float: left; width: 90px; margin-left: 5px;}
+.consoleBtn a:first-child{margin-left: 0;}
+.getContents{margin-top:30px;}
+

@@ -3,6 +3,7 @@ $(document).ready(function(){
     init();
     leftNav()
     nav_height()
+    wingMotion()
 })
 
 function init() {
@@ -37,6 +38,19 @@ function init() {
     $(window).on('resize',function(){
         nav_height()
     })
+    $('.btnConsole a').on('click',function(){
+        $(this).toggleClass('active')
+        $('.apiContents').toggleClass('active')
+        $('.consoleCon').toggleClass('active')
+    })
+    $('.slideBlock .btn a.slide').on('click',function(){
+        $(this).toggleClass('active')
+        $(this).parent().parent().toggleClass('active')
+        $(this).parent().parent().find('ul').toggle();
+        return false;
+    })
+    setInterval(function() {wingMotion()}, 6000);
+    
 //    $('.serviceTab li a').on('click',function(){
 //        var indexNum = $('.serviceTab li a').index(this);
 //        $('.serviceTab li').removeClass('active')
@@ -119,9 +133,12 @@ function layer_init(name){
 function leftNav(){
     $('.leftNav ul li.active').parent().parent().show().prev().addClass('active');
     $('.leftNav dt a').on('click',function(){
-        $(this).parent().toggleClass('active').parent().siblings('dl').find('dt').removeClass('active')
-        $(this).parent().next().slideToggle(200)
-        $(this).parent().parent().siblings('dl').find('dd').slideUp(200)
+        if($(this).parent().parent().find('dd').size()!=0){
+            $(this).parent().toggleClass('active').parent().siblings('dl').find('dt').removeClass('active')
+            $(this).parent().next().slideToggle(200)
+            $(this).parent().parent().siblings('dl').find('dd').slideUp(200)
+            return false;
+        }
     })
 }
 function nav_height(){
@@ -131,3 +148,9 @@ function nav_height(){
     return false;
 }
 
+function wingMotion() {
+    TweenMax.to($('#header .logo .wing_l'),0.5,{opacity:1, transform:'rotateY(30deg) rotateZ(10deg) translateY(-3px)',ease:Sine.easeInOut, delay:1})
+    TweenMax.to($('#header .logo .wing_l'),0.5,{opacity:1, transform:'rotateY(0deg) rotateZ(0deg) translateY(0px)',ease:Sine.easeInOut,delay:1.5})
+    TweenMax.to($('#header .logo .wing_r'),0.5,{opacity:1, transform:'rotateX(30deg) rotateZ(-10deg) translateY(-3px)  translateX(1px)',ease:Sine.easeInOut, delay:1})
+    TweenMax.to($('#header .logo .wing_r'),0.5,{opacity:1, transform:'rotateY(0deg) rotateZ(0deg) translateY(0px) translateX(0)',ease:Sine.easeInOut,delay:1.5})
+}
